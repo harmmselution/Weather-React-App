@@ -1,0 +1,37 @@
+@import '../../styles/variables.scss';
+.this__day {
+    max-width: 400px;
+    padding: 30px;
+    width: 100%;
+    box-shadow: $box-shadow;
+    border-radius: $border-radius;
+    background:$lite-background;
+}
+.top__block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    width: 100%;
+    svg {
+        width: 119px;
+        height: 119px;
+    }
+    .this__temp {
+        font-weight: 500;
+font-size: 96px;
+line-height: 117px;
+color: $primary-color;
+    }
+    .this__day_name {
+        font-size:40px;
+        color:$lite-color;
+    }
+}
+.bottom__block {
+    .this__time,
+    .this__city {
+        color:$base-color;
+        font-size: 25px;
+    }
+}

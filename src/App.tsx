@@ -6,6 +6,7 @@ import { Route, Routes} from 'react-router-dom';
 import { Header } from './shared/Header/Header';
 function App() {
   return (
+    
     <div className='container'>
     <Header/>
     <Routes>  
@@ -14,7 +15,7 @@ function App() {
     </Routes>
     </div>
 
-   
+  
 
   );
 }

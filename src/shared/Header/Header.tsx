@@ -6,9 +6,9 @@ type Props = {}
 
 export const Header = (props: Props) => {
     const options = [
-        { value: 'chocolate', label: 'Chocolate' },
-        { value: 'strawberry', label: 'Strawberry' },
-        { value: 'vanilla', label: 'Vanilla' }
+        { value: 'city-1', label: 'Санкт-Петербург' },
+        { value: 'city-2', label: 'Москва' },
+        { value: 'city-3', label: 'Новгород' }
       ]
   return (
     <header className={s.header}>
@@ -22,7 +22,16 @@ export const Header = (props: Props) => {
             <div className={s.change_theme}>
                 <Svgs name="theme"/>
             </div>
-            <Select options={options}/>
+            <Select defaultValue={options[0]} options={options} styles={{
+                control: (baseStyles) => ({
+                    ...baseStyles,background: "rgba(71, 147, 255, 0.2)",
+                        borderRadius:"10px",
+                        width:"194px",
+                        heigth:"37px",
+                        border:"none",
+                        zIndex:"100"
+                })
+            }}/>
         </div>
     </header>
   )
