@@ -1,4 +1,4 @@
-@import '../../styles/variables.scss';
+@import '../../../styles/variables.scss';
 .this__day {
     max-width: 400px;
     padding: 30px;
@@ -33,5 +33,8 @@ color: $primary-color;
     .this__city {
         color:$base-color;
         font-size: 25px;
+    }
+    .this__time {
+        padding-bottom: 14px;
     }
 }

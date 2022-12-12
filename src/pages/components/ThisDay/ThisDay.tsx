@@ -1,6 +1,6 @@
 import React from 'react'
 import s from './ThisDay.module.scss';
-import { Svgs } from '../../shared/Header/Svgs';
+import { Svgs } from '../../../shared/Header/Svgs';
 type Props = {}
 
 export const ThisDay = (props: Props) => {
@@ -11,7 +11,7 @@ export const ThisDay = (props: Props) => {
         <div className={s.this__temp}>20°</div>
         <div className={s.this__day_name}>Сегодня</div>
         </div>
-        <Svgs name='sun'/>
+        <Svgs name='Bigsun'/>
       </div>
       <div className={s.bottom__block}>
         <div className={s.this__time}>
