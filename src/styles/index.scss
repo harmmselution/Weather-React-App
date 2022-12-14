@@ -5,6 +5,7 @@
 }
 body {
     font-family: 'Montserrat', sans-serif;
+    position: relative;
 }
 .container {
     padding-top: 20px;
@@ -12,4 +13,8 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
+}
+.global {
+    position: relative;
+    height: 100%;
 }
