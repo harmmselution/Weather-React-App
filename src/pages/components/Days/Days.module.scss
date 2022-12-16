@@ -3,7 +3,7 @@
    display: flex;
    justify-content: space-between;
    flex-wrap: wrap;
-   background: $lite-background;
+   background: var(--components-background-default);
    padding: 20px;
    width: 100%;
    box-shadow: $box-shadow;
@@ -12,18 +12,20 @@
 .card {
     display: flex;
     flex-direction: column;
-    background: rgba(71, 147, 255, 0.2);
+    background: var(--card-background-default);
 border-radius: 10px;
     width: 149px;
     cursor: pointer;
     padding: 10px;
+    height: 200px;
+    align-items: center;
 
 .day {
     font-weight: 500;
 font-size: 18px;
 line-height: 22px;
 
-color: $lite-color;
+color: var(--text-color-default);
 
 }
 .day_info {
@@ -32,7 +34,7 @@ color: $lite-color;
 }
 
 .temp_day {
-    color:$lite-color;
+    color:var(--text-color-default);
     font-weight: 500;
 font-size: 18px;
 }
@@ -67,11 +69,11 @@ transition: 0.3s;
 }
 .tab,.cansel {
     box-shadow: $box-shadow;
-    background: $lite-background;
+    background: var(--components-background-default);
     padding: 7px 20px 10px 20px;
     border-radius: 5px;
     font-size: 18px;
-    color:$lite-color;
+    color:var(--text-color-default);
     cursor: pointer;
 }
 .tab {

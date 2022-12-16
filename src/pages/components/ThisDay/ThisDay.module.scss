@@ -5,7 +5,7 @@
     width: 100%;
     box-shadow: $box-shadow;
     border-radius: $border-radius;
-    background:$lite-background;
+    background:var(--components-background-default);
 }
 .top__block {
     display: flex;
@@ -25,7 +25,7 @@ color: $primary-color;
     }
     .this__day_name {
         font-size:40px;
-        color:$lite-color;
+        color:var(--text-color-default);
     }
 }
 .bottom__block {

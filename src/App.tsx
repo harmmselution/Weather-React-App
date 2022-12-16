@@ -8,12 +8,12 @@ import { PopUp } from './pages/components/PopUp/PopUp';
 function App() {
   return (
    <div className="global">
-    <PopUp/>
+   {/* <PopUp/> */}
     <div className='container'>
       
     <Header/>
     <Routes>  
-      <Route path="/Home" element={<Home/>}/>
+      <Route path="/" element={<Home/>}/>
       <Route path="/month-statistics" element={<MonthStatistics/>}/>
     </Routes>
     </div>

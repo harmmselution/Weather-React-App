@@ -1,13 +1,13 @@
 @import '../../../styles/variables.scss';
 .this__day_info {
    padding: 32px 0px 49px 39px;
-    
 }
 .cloud {
     position: absolute;
     top: 0;
     right: 0;
-    z-index:-2;
+    z-index:4;
+    
 }
 .day__item {
     display: flex;
@@ -20,13 +20,16 @@
        svg {
         width: 38px;
         height: 38px;
+        
     }
 }
 .indicatorName {
     color:$base-color;
+    
 }
 .indicatorValue {
-    color:$lite-color;
+    color:var(--text-color-default);
+    z-index: 15;
 }
 .wrapper_info {
     position: relative;
@@ -34,10 +37,15 @@
     max-width: 750px;
     width: 100%;
     border-radius: $border-radius;
+    background-color: #fff;
+    background: var(#{--components-background-default});
+    
 }
 .indicator {
     background-color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 50%;
+    
 }

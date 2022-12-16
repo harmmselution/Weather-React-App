@@ -1,6 +1,35 @@
 $lite-background: #fff;
-$box-shadow: 2px 5px 25px rgba(180, 180, 180, 0.25);
+$box-shadow: 2px 5px 25px -3px rgba(180, 180, 180, 0.25);
 $border-radius: 20px;
 $primary-color: #4793FF;
 $lite-color: #000;
 $base-color:#939CB0;
+$dark-color:#fff;
+$body-background-dark: #0d1117;
+$body-background-light: #fff;
+
+$components-background-dark:#4F4F4F;
+   $components-background-light:#fff;
+
+$card-background-dark:#2E3035;
+$card-background-light:rgba(71, 147, 255, 0.2);;
+
+
+:root {
+   --body-background-dark: #{$body-background-dark};
+   --body-background-light: #{$body-background-light};
+   --body-background-default: #{$body-background-light};
+
+   --components-background-dark:#{$components-background-dark};
+   --components-background-light:#{$components-background-light};
+   --components-background-default:#{$components-background-light};
+
+   --card-background-dark:#{$card-background-dark};
+   --card-background-light:#{$card-background-light};
+   --card-background-default:#{$card-background-light};
+   
+   --text-color-dark: #{$lite-color};
+   --text-color-dark: #{$dark-color};
+   --text-color-default: #{$lite-color};
+
+}

@@ -1,6 +1,6 @@
 import React from 'react'
 import s from './ThisDayInfo.module.scss';
-import cloud from '../../../assets/images/background.jpg';
+import cloud from '../../../assets/images/cloud2.png';
 import { ThisDayItem } from '../ThisDayItem/ThisDayItem';
 export interface Item {
   icon_id: string,

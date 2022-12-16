@@ -7,7 +7,7 @@
     position: absolute;
     top:calc(50% - 150px);
     left:calc(50% - 325px);
-    z-index: 1000;
+    z-index: inherit;
     width: 100%;
     background: $lite-background;
     box-shadow: $box-shadow;
@@ -26,8 +26,14 @@
     top:20px;
     right: 20px;
     cursor: pointer;
+    
+        svg:hover {
+transform: rotate(360deg);
+transition: 0.3s;
+        }
+         
+    }
 
-}
 .temp {
     font-weight: 500;
     font-size: 86px;
