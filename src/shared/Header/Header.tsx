@@ -1,7 +1,8 @@
 import { Svgs } from './Svgs';
 import s from './Header.module.scss';
 import Select from 'react-select';
-import {useState, useEffect} from 'react';
+import {useState, useEffect,useContext} from 'react';
+import { useTheme } from '../../hooks/useTheme';
 type Props = {}
 
 export const Header = (props: Props) => {
@@ -10,11 +11,12 @@ export const Header = (props: Props) => {
         { value: 'city-2', label: 'Москва' },
         { value: 'city-3', label: 'Новгород' }
       ]
-      const [theme, setTheme] = useState('light');
-
-     
+    
+     const theme = useTheme();
+     console.log(theme.changeTheme)
       const handleTheme = () => {
-          theme === "light" ? setTheme("dark") : setTheme("light");
+          theme.theme === "light" ? theme.changeTheme("dark") : theme.changeTheme("light");
+          console.log(theme.theme);
         }
         useEffect( () => {
             let root = document.querySelector(":root") as HTMLElement;
@@ -26,9 +28,9 @@ export const Header = (props: Props) => {
             ]
             elements.forEach( elem => {
     
-            root.style.setProperty( `--${elem}-default`,`var(--${elem}-${theme})`);
+            root.style.setProperty( `--${elem}-default`,`var(--${elem}-${theme.theme})`);
             })   
-        },[theme])
+        },[theme.theme])
     
         return (
     <header className={s.header}>
@@ -45,7 +47,7 @@ export const Header = (props: Props) => {
             <Select defaultValue={options[0]} options={options} styles={{
                 control: (baseStyles) => ({
                     ...baseStyles,
-                        backgroundColor:  theme === 'dark' ? '#4F4F4F' : "rgba(71, 147, 255, 0.2)",
+                        backgroundColor:  theme.theme === 'dark' ? '#4F4F4F' : "rgba(71, 147, 255, 0.2)",
                         borderRadius:"10px",
                         width:"194px",
                         heigth:"37px",
@@ -54,7 +56,7 @@ export const Header = (props: Props) => {
                 }),
                 singleValue: (baseStyles: any) => ({
                     ...baseStyles,
-                    color: theme === 'dark' ? '#fff' : "#000",
+                    color: theme.theme === 'dark' ? '#fff' : "#000",
                 })
             }}/>
         </div>
