@@ -1,8 +1,8 @@
 import { Svgs } from './Svgs';
 import s from './Header.module.scss';
 import Select from 'react-select';
-import {useState, useEffect,useContext} from 'react';
 import { useTheme } from '../../hooks/useTheme';
+import { Theme } from '../../context/ThemeContext';
 type Props = {}
 
 export const Header = (props: Props) => {
@@ -13,24 +13,11 @@ export const Header = (props: Props) => {
       ]
     
      const theme = useTheme();
-     console.log(theme.changeTheme)
-      const handleTheme = () => {
-          theme.theme === "light" ? theme.changeTheme("dark") : theme.changeTheme("light");
-          console.log(theme.theme);
-        }
-        useEffect( () => {
-            let root = document.querySelector(":root") as HTMLElement;
-            const elements = [
-                'body-background',
-                'components-background',
-                'card-background',
-                'text-color'
-            ]
-            elements.forEach( elem => {
     
-            root.style.setProperty( `--${elem}-default`,`var(--${elem}-${theme.theme})`);
-            })   
-        },[theme.theme])
+      const handleTheme = () => {
+          theme.theme === Theme.LIGHT ? theme.changeTheme(Theme.DARK) : theme.changeTheme(Theme.LIGHT);
+        }
+      
     
         return (
     <header className={s.header}>
@@ -47,7 +34,7 @@ export const Header = (props: Props) => {
             <Select defaultValue={options[0]} options={options} styles={{
                 control: (baseStyles) => ({
                     ...baseStyles,
-                        backgroundColor:  theme.theme === 'dark' ? '#4F4F4F' : "rgba(71, 147, 255, 0.2)",
+                        backgroundColor:  theme.theme === Theme.DARK ? '#4F4F4F' : "rgba(71, 147, 255, 0.2)",
                         borderRadius:"10px",
                         width:"194px",
                         heigth:"37px",
@@ -56,7 +43,7 @@ export const Header = (props: Props) => {
                 }),
                 singleValue: (baseStyles: any) => ({
                     ...baseStyles,
-                    color: theme.theme === 'dark' ? '#fff' : "#000",
+                    color: theme.theme === Theme.DARK ? '#fff' : "#000",
                 })
             }}/>
         </div>
