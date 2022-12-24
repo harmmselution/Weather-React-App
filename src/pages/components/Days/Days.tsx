@@ -73,7 +73,7 @@ export const Days = (props: Props) => {
   return (
     <>
   <Tabs/>
-    <div className={s.daysWrapper}>{days.map(day => <Card day = {day}/>)}</div>
+    <div className={s.daysWrapper}>{days.map((day,index) => <Card day = {day} key={index}/>)}</div>
     </>
   
   )

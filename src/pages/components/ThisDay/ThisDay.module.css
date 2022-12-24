@@ -1,0 +1,54 @@
+:root {
+  --body-background-dark: #0d1117;
+  --body-background-light: #fff;
+  --body-background-default: #fff;
+  --components-background-dark:#4F4F4F;
+  --components-background-light:#fff;
+  --components-background-default:#fff;
+  --card-background-dark:#2E3035;
+  --card-background-light:rgba(71, 147, 255, 0.2);
+  --card-background-default:rgba(71, 147, 255, 0.2);
+  --text-color-dark: #000;
+  --text-color-dark: #fff;
+  --text-color-default: #000;
+}
+
+.this__day {
+  max-width: 400px;
+  padding: 30px;
+  width: 100%;
+  box-shadow: 2px 5px 25px -3px rgba(180, 180, 180, 0.25);
+  border-radius: 20px;
+  background: var(--components-background-default);
+}
+
+.top__block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  width: 100%;
+}
+.top__block svg {
+  width: 119px;
+  height: 119px;
+}
+.top__block .this__temp {
+  font-weight: 500;
+  font-size: 96px;
+  line-height: 117px;
+  color: #4793FF;
+}
+.top__block .this__day_name {
+  font-size: 40px;
+  color: var(--text-color-default);
+}
+
+.bottom__block .this__time,
+.bottom__block .this__city {
+  color: #939CB0;
+  font-size: 25px;
+}
+.bottom__block .this__time {
+  padding-bottom: 14px;
+}/*# sourceMappingURL=ThisDay.module.css.map */

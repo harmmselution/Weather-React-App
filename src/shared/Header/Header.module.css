@@ -1,0 +1,31 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  padding-right: 20px;
+}
+.logo svg {
+  width: 65px;
+  height: 65px;
+}
+
+.title {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 30px;
+  text-transform: uppercase;
+  color: #4793FF;
+}
+
+.change_theme {
+  padding-right: 20px;
+}/*# sourceMappingURL=Header.module.css.map */

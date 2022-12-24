@@ -1,0 +1,93 @@
+:root {
+  --body-background-dark: #0d1117;
+  --body-background-light: #fff;
+  --body-background-default: #fff;
+  --components-background-dark:#4F4F4F;
+  --components-background-light:#fff;
+  --components-background-default:#fff;
+  --card-background-dark:#2E3035;
+  --card-background-light:rgba(71, 147, 255, 0.2);
+  --card-background-default:rgba(71, 147, 255, 0.2);
+  --text-color-dark: #000;
+  --text-color-dark: #fff;
+  --text-color-default: #000;
+}
+
+.daysWrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background: var(--components-background-default);
+  padding: 20px;
+  width: 100%;
+  box-shadow: 2px 5px 25px -3px rgba(180, 180, 180, 0.25);
+  border-radius: 0 0 20px 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--card-background-default);
+  border-radius: 10px;
+  width: 149px;
+  cursor: pointer;
+  padding: 10px;
+  height: 200px;
+  align-items: center;
+  transition: 0.3s;
+}
+.card .day {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: var(--text-color-default);
+}
+.card .day_info {
+  color: #939CB0;
+  font-size: 14px;
+}
+.card .temp_day {
+  color: var(--text-color-default);
+  font-weight: 500;
+  font-size: 18px;
+}
+.card .temp_night {
+  font-size: 13px;
+  color: #939CB0;
+}
+.card .info {
+  font-size: 13px;
+  color: #939CB0;
+}
+.card svg {
+  width: 48px;
+  height: 48px;
+}
+.card:hover {
+  box-shadow: 2px 5px 25px -3px rgba(0, 0, 0, 0.25);
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  padding: 54px 0px 7px 0px;
+}
+
+.tabs__wrapper {
+  display: flex;
+  gap: 30px;
+}
+
+.tab, .cansel {
+  box-shadow: 2px 5px 25px -3px rgba(180, 180, 180, 0.25);
+  background: var(--components-background-default);
+  padding: 7px 20px 10px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  color: var(--text-color-default);
+  cursor: pointer;
+}
+
+.tab.active {
+  background: #4793FF;
+}/*# sourceMappingURL=Days.module.css.map */

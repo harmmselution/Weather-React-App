@@ -1,14 +1,16 @@
 import React from 'react'
 import s from './ThisDay.module.scss';
 import { Svgs } from '../../../shared/Header/Svgs';
-type Props = {}
+type Props = {
+  weather:any,
+}
 
-export const ThisDay = (props: Props) => {
+export const ThisDay = ({weather}: Props) => {
   return (
     <div className={s.this__day}>
       <div className={s.top__block}>
         <div className={s.top__block_wrapper}>
-        <div className={s.this__temp}>20°</div>
+        <div className={s.this__temp}>{weather.current.temp_c}°</div>
         <div className={s.this__day_name}>Сегодня</div>
         </div>
         <Svgs name='Bigsun'/>

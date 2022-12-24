@@ -1,0 +1,14 @@
+:root {
+  --body-background-dark: #0d1117;
+  --body-background-light: #fff;
+  --body-background-default: #fff;
+  --components-background-dark:#4F4F4F;
+  --components-background-light:#fff;
+  --components-background-default:#fff;
+  --card-background-dark:#2E3035;
+  --card-background-light:rgba(71, 147, 255, 0.2);
+  --card-background-default:rgba(71, 147, 255, 0.2);
+  --text-color-dark: #000;
+  --text-color-dark: #fff;
+  --text-color-default: #000;
+}/*# sourceMappingURL=variables.css.map */

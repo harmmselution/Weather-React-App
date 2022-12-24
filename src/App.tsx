@@ -7,7 +7,6 @@ import { PopUp } from './pages/components/PopUp/PopUp';
 import { ThemeProvider } from './provider/ThemeProvider';
 function App() {
 
-    
   return (
    <ThemeProvider>
    <div className="global">
@@ -22,13 +21,6 @@ function App() {
     </div>
     </div>
    </ThemeProvider>
-
-   
-  
-
-    
-
-  
 
   );
 }
