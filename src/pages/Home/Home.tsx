@@ -5,21 +5,19 @@ import s from './Home.module.scss';
 import { Days } from '../components/Days/Days';
 import { useCustomSelector, useCustomDispatch  } from '../../hooks/storeHooks';
 import { fetchWeatherNow } from '../../thunks/fetchWeatherNow';
-import { fetchCurrentWeatherError } from '../../store/weaterSlice';
 type Props = {}
 
 export const Home = (props: Props) => {
-  const WeatherState = useCustomSelector(state => state.CurrentWeatherReducer);
-  console.log(WeatherState); 
+  const state = useCustomSelector(state => state.CurrentWeatherReducer);
   const dispatch = useCustomDispatch();
  
   useEffect(() => {
-    dispatch(fetchWeatherNow("London"));
-  },[]);
-
+    dispatch(fetchWeatherNow(state.town));
+  },[state.town]);
+  
   return (<>
   <div className={s.wrapper}>
-  <ThisDay weather = {WeatherState.weather} />
+  <ThisDay weather = {state.weather} />
   <ThisDayInfo/>
   </div>
   <Days/> 

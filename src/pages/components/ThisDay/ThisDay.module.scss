@@ -6,6 +6,7 @@
     box-shadow: $box-shadow;
     border-radius: $border-radius;
     background:var(--components-background-default);
+    position: relative;
 }
 .top__block {
     display: flex;
@@ -37,4 +38,12 @@ color: $primary-color;
     .this__time {
         padding-bottom: 14px;
     }
+}
+.weatherIcon  {
+    position: absolute;
+    top:30px;
+    right:20px;
+    width: 200px;
+    height: 250px;
+
 }

@@ -1,78 +1,52 @@
 import React from 'react'
 import { Card } from './Card'
 import s from './Days.module.scss';
-import { Tabs } from './Tabs';
+import { useCustomSelector } from '../../../hooks/storeHooks';
 type Props = {}
 export interface IDays {
     day:string
     day_info: string
     icon_id: string
-    temp_day: string
-    temp_night:string
+   maxtemp: number
+    mintemp:number
     info: string
 }
+
 export const Days = (props: Props) => {
+  const store = useCustomSelector(store => store.CurrentWeatherReducer);
+      const this_day = store.weather.forecast.forecastday[0].date;
+      const next_day = store.weather.forecast.forecastday[1].date;
+      const next_next_day = store.weather.forecast.forecastday[2].date;
     const days = [ 
         {
-          day:"Сегодня",
-          day_info: "28 августа",
-          icon_id: "sun",
-          temp_day: "+18",
-          temp_night: "+15",
-          info: "Облачно"
+          day:"Today",
+          day_info: this_day,
+          icon_id: store.weather.current.condition.icon,
+         maxtemp: store.weather.current.temp_c,
+          mintemp:1,
+          info: store.weather.current.condition.text
         },
         {
-            day:"Завтра",
-            day_info: "29 августа",
-            icon_id: "sun",
-            temp_day: "+15",
-            temp_night: "+15",
-            info: "Небольшой дождь"
+            day:"Tomorrow",
+            day_info: next_day,
+            icon_id: store.weather.forecast.forecastday[1].day.condition.icon,
+           maxtemp: store.weather.forecast.forecastday[1].day.maxtemp_c,
+            mintemp: store.weather.forecast.forecastday[1].day.mintemp_c,
+            info: store.weather.forecast.forecastday[1].day.condition.text
           },
           {
-            day:"Пн",
-            day_info: "28 августа",
-            icon_id: "sunAndRain",
-            temp_day: "+18",
-            temp_night: "+15",
-            info: "Облачно"
+            day:"Next day",
+            day_info: next_next_day,
+            icon_id: store.weather.forecast.forecastday[2].day.condition.icon,
+            maxtemp: store.weather.forecast.forecastday[2].day.maxtemp_c,
+            mintemp: store.weather.forecast.forecastday[2].day.mintemp_c,
+            info: store.weather.forecast.forecastday[2].day.condition.text
           },
-          {
-            day:"Вт",
-            day_info: "28 августа",
-            icon_id: "rain",
-            temp_day: "+18",
-            temp_night: "+15",
-            info: "Облачно"
-          },
-          {
-            day:"Ср",
-            day_info: "28 августа",
-            icon_id: "smallRain",
-            temp_day: "+18",
-            temp_night: "+15",
-            info: "Облачно"
-          },
-          {
-            day:"Чт",
-            day_info: "28 августа",
-            icon_id: "pasmurno",
-            temp_day: "+18",
-            temp_night: "+15",
-            info: "Облачно"
-          },
-          {
-            day:"Пт",
-            day_info: "28 августа",
-            icon_id: "sun",
-            temp_day: "+18",
-            temp_night: "+15",
-            info: "Облачно"
-          },
+          
     ]
+    console.log(store.weather.forecast.forecastday[1].day.condition);
   return (
     <>
-  <Tabs/>
     <div className={s.daysWrapper}>{days.map((day,index) => <Card day = {day} key={index}/>)}</div>
     </>
   

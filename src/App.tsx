@@ -10,7 +10,7 @@ function App() {
   return (
    <ThemeProvider>
    <div className="global">
-   {/* <PopUp/> */}
+   <PopUp/>
     <div className='container'>
       
     <Header/>

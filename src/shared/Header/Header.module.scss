@@ -1,7 +1,9 @@
 .header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
+    padding-bottom: 85px;
 }
 .wrapper {
     display: flex;
@@ -26,4 +28,21 @@ color: #4793FF;
 }
 .change_theme {
     padding-right: 20px;
+}
+
+.searchForm {
+   border-radius: 20px;
+   padding: 10px;
+   border: 2px solid black;
+}
+.searchForm::placeholder {
+    color:#4793FF;
+    font-weight: 600;
+}
+.submitInput {
+    border-radius: 20px;
+    padding: 10px;
+    color:#4793FF;
+    font-weight: 600;
+    margin-left: 20px;
 }

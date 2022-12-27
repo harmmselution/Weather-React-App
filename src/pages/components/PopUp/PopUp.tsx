@@ -2,9 +2,13 @@ import React from 'react'
 import s from './PopUp.module.scss';
 import { ThisDayItem } from '../ThisDayItem/ThisDayItem';
 import { Svgs } from '../../../shared/Header/Svgs';
+import { useCustomDispatch, useCustomSelector } from '../../../hooks/storeHooks';
+import { changePopupFlag } from '../../../store/weaterSlice';
 type Props = {}
 
 export const PopUp = (props: Props) => {
+  const state = useCustomSelector(state => state.CurrentWeatherReducer);
+  const dispatch = useCustomDispatch();
     const items = [
         {
           icon_id: "temp",
@@ -27,8 +31,12 @@ export const PopUp = (props: Props) => {
           value: "3 м/с юго-запад - легкий ветер"
         },
       ]
+      const closePopUp = () => {
+        dispatch(changePopupFlag(false));
+      }
       return (
-        <div className={s.blur}>
+        <>
+         {state.popUpState ? <div className={s.blur}>
         <div className={s.popUp}>
             <div className={s.popUp_day}>
             <div className={s.temp}>12°</div>
@@ -43,11 +51,13 @@ export const PopUp = (props: Props) => {
         <div className={s.popUp_indirators}>
           <div className={s.this__day_info_items}>{items.map((item) => <ThisDayItem item ={item} key ={item.icon_id}/>)}</div>
         </div>
-        <div className={s.close}>
+        <div className={s.close} onClick={closePopUp} >
 
         <Svgs name="close"/>
         </div>
         </div>
-        </div>
+        </div> : ''
+}
+        </>
       );
 }

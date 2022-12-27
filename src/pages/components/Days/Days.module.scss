@@ -8,6 +8,7 @@
    width: 100%;
    box-shadow: $box-shadow;
    border-radius: 0 0 $border-radius $border-radius;
+   margin-top: 50px;
 }
 .card {
     display: flex;
@@ -26,6 +27,7 @@ font-size: 18px;
 line-height: 22px;
 
 color: var(--text-color-default);
+text-align: center;
 
 }
 .day_info {
@@ -46,6 +48,7 @@ font-size: 18px;
 .info {
     font-size:13px;
     color: $base-color;
+    text-align: center;
 }
 svg {
     width: 48px;
