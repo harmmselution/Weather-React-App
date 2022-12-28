@@ -1,4 +1,3 @@
-import React from 'react'
 import s from './ThisDayInfo.module.scss';
 import cloud from '../../../assets/images/cloud2.png';
 import { ThisDayItem } from '../ThisDayItem/ThisDayItem';

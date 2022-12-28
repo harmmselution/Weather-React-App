@@ -1,4 +1,3 @@
-import React from 'react'
 import { Item } from '../ThisDayInfo/ThisDayInfo'
 import { Svgs } from '../../../shared/Header/Svgs';
 import s from '../ThisDayInfo/ThisDayInfo.module.scss';

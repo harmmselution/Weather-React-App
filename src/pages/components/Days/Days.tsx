@@ -1,8 +1,7 @@
-import React from 'react'
 import { Card } from './Card'
 import s from './Days.module.scss';
 import { useCustomSelector } from '../../../hooks/storeHooks';
-type Props = {}
+
 export interface IDays {
     day:string
     day_info: string
@@ -12,7 +11,7 @@ export interface IDays {
     info: string
 }
 
-export const Days = (props: Props) => {
+export const Days = () => {
   const store = useCustomSelector(store => store.CurrentWeatherReducer);
       const this_day = store.weather.forecast.forecastday[0].date;
       const next_day = store.weather.forecast.forecastday[1].date;
@@ -44,7 +43,7 @@ export const Days = (props: Props) => {
           },
           
     ]
-    console.log(store.weather.forecast.forecastday[1].day.condition);
+
   return (
     <>
     <div className={s.daysWrapper}>{days.map((day,index) => <Card day = {day} key={index}/>)}</div>

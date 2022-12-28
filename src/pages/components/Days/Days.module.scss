@@ -1,11 +1,12 @@
 @import "../../../styles/variables.scss";
 .daysWrapper {
    display: flex;
+   align-self: center;
    justify-content: space-between;
    flex-wrap: wrap;
    background: var(--components-background-default);
    padding: 20px;
-   width: 100%;
+   width: 50%;
    box-shadow: $box-shadow;
    border-radius: 0 0 $border-radius $border-radius;
    margin-top: 50px;

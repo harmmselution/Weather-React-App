@@ -4,39 +4,42 @@ import Select from 'react-select';
 import { useTheme } from '../../hooks/useTheme';
 import { Theme } from '../../context/ThemeContext';
 import { useCustomSelector, useCustomDispatch} from '../../hooks/storeHooks';
-import React, { useState } from 'react';
+import  { useRef } from 'react';
 import { changeTown } from '../../store/weaterSlice';
-type Props = {}
-
-export const Header = (props: Props) => {
+import { KeyboardEvent } from 'react';
+export const Header = () => {
    
     const state = useCustomSelector(state => state.CurrentWeatherReducer)
     const dispatch = useCustomDispatch();
      const theme = useTheme();
-    
-      const handleTheme = () => {
-          theme.theme === Theme.LIGHT ? theme.changeTheme(Theme.DARK) : theme.changeTheme(Theme.LIGHT);
-        }
-        const [currentCountry, setCurrentCountry] = useState('Minsk');
-        const getValue = () => {
-           
-          return state.options.find(el => el.value === currentCountry)
-        }
-        const handleChange = (newValue: any) => {
-            setCurrentCountry(newValue.value);
-            dispatch(changeTown(newValue.value));   
-           
-        }
-       
-       const [town, setTown] = useState('');
 
-       const handleTown = (e:React.ChangeEvent<HTMLInputElement>): void => {
-            setTown(e.target.value);
-       }
+     const handleTheme =  () => {
+         theme.theme === Theme.LIGHT ? theme.changeTheme(Theme.DARK) : theme.changeTheme(Theme.LIGHT);
+        } 
+
+        const townRef = useRef<HTMLInputElement | null>(null);
+        const handleChange = (newValue: any) => {
+           
+            dispatch(changeTown(newValue.value));   
+            
+        }
+     
+        localStorage.setItem("town",JSON.stringify(state.town));
+
        const submitTown = () => {
-            dispatch(changeTown(town))
+            if(townRef.current!.value){
+                dispatch(changeTown(townRef.current!.value))
+            townRef.current!.value = ''
+            }
+
        }
-       console.log(town)
+       const keyBoardEvent = (e:KeyboardEvent<HTMLInputElement>) => {
+            if(e.key === 'Enter') {
+                console.log("ENTTTER")
+                dispatch(changeTown(townRef.current!.value))
+            townRef.current!.value = ''
+            }
+       }
         return (
     <header className={s.header}>
     <div className={s.wrapper}>
@@ -46,20 +49,18 @@ export const Header = (props: Props) => {
         <div className={s.title}>React weather</div>
     </div>
             <div>
-              <form action="" onSubmit={(e)=> e.preventDefault()} >
-               <input type="text" placeholder='введите страну' value={town} onChange={handleTown} className={s.searchForm}/>
+               <input ref={townRef} type="text" placeholder='введите город'  className={s.searchForm} onKeyDown={keyBoardEvent}/>
                <input onClick={submitTown} value = "Найти" type="submit" className={s.submitInput}/>
-              </form>
             </div>
         <div className={s.wrapper}>
             
             <div className={s.change_theme} onClick={handleTheme}>
-                <Svgs name="theme"/>
+            <Svgs name="theme"/>
             </div>
             <Select
-            value={getValue()}
             onChange = {handleChange}
-            options={state.options} styles={{
+            options={state.options} 
+            styles={{
                 control: (baseStyles) => ({
                     ...baseStyles,
                         backgroundColor:  theme.theme === Theme.DARK ? '#4F4F4F' : "rgba(71, 147, 255, 0.2)",

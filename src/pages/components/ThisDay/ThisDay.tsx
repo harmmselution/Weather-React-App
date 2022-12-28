@@ -1,8 +1,6 @@
 import React from 'react'
 import s from './ThisDay.module.scss';
-import { Svgs } from '../../../shared/Header/Svgs';
 import { Weather } from '../../../types/types';
-import moment from 'moment';
 import { useCustomSelector } from '../../../hooks/storeHooks';
 
 type Props = {
@@ -22,7 +20,8 @@ export const ThisDay = ({weather}: Props) => {
       </div>
       <div className={s.bottom__block}>
         <div className={s.this__time}>
-          Updated: <span>{state.weather.current.last_updated.slice(10,state.weather.current.last_updated.length)}</span>
+         Updated: <span>{state.weather.current.last_updated.slice(10,state.weather.current.last_updated.length)}</span>
+          
         </div>
         <div className={s.this__city}>
           City: {weather.location.name}

@@ -1,12 +1,11 @@
-import React from 'react'
 import s from './PopUp.module.scss';
 import { ThisDayItem } from '../ThisDayItem/ThisDayItem';
 import { Svgs } from '../../../shared/Header/Svgs';
 import { useCustomDispatch, useCustomSelector } from '../../../hooks/storeHooks';
 import { changePopupFlag } from '../../../store/weaterSlice';
-type Props = {}
 
-export const PopUp = (props: Props) => {
+
+export const PopUp = () => {
   const state = useCustomSelector(state => state.CurrentWeatherReducer);
   const dispatch = useCustomDispatch();
     const items = [
@@ -48,7 +47,7 @@ export const PopUp = (props: Props) => {
             <div className={s.city}>Город: Санкт-Петербург</div>
 
             </div>
-        <div className={s.popUp_indirators}>
+            <div className={s.popUp_indirators}>
           <div className={s.this__day_info_items}>{items.map((item) => <ThisDayItem item ={item} key ={item.icon_id}/>)}</div>
         </div>
         <div className={s.close} onClick={closePopUp} >

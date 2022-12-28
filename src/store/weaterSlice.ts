@@ -88,11 +88,11 @@ const initialState:CurrentWeather = {
         { value: 'London', label: 'London'},
         { value: 'Paris', label: 'Paris' }
       ],
-      town: "Minsk",
+      town: JSON.parse(localStorage.getItem("town") || '') || "Minsk" ,
       popUpState: false
 
         
-}
+}   
 
 export const currentWeatherSlice = createSlice({
     name: 'current_weather',

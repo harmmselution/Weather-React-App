@@ -23,7 +23,6 @@ export const ThemeProvider = ({children, ...props}:Props) => {
            
     }
     
-
     return (<ThemeContext.Provider value={{
         theme,
         changeTheme,

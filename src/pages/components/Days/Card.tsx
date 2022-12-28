@@ -1,7 +1,6 @@
 import React from 'react'
 import { IDays } from './Days';
 import s from './Days.module.scss';
-import { Svgs } from '../../../shared/Header/Svgs';
 import { useCustomDispatch, useCustomSelector } from '../../../hooks/storeHooks';
 import {useState,useEffect} from 'react';
 import { changePopupFlag } from '../../../store/weaterSlice';
@@ -15,7 +14,9 @@ export const Card = ({day}: Props) => {
   const dispatch = useCustomDispatch();
   const handleFlag = () => {
       setFlag(true);
-      dispatch(changePopupFlag(flag))
+      dispatch(changePopupFlag(flag));
+
+
   }
   useEffect(() => {
     setFlag(true);
@@ -33,7 +34,7 @@ export const Card = ({day}: Props) => {
           <div className={s.temp_night}>min: {day.mintemp}°</div>
              <div className={s.info}>{day.info}</div>
     </div>
-
+  
    
   )
 }
